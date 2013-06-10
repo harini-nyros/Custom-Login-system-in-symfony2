@@ -1,0 +1,47 @@
+_welcome:
+    pattern:  /
+    defaults: { _controller: AcmeDemoBundle:Welcome:index }
+_demo:
+    resource: "@AcmeDemoBundle/Controller/DemoController.php"
+    type:     annotation
+    prefix:   /demo
+repair_store:
+    resource: "@RepairStoreBundle/Resources/config/routing.php"
+    prefix:   /
+acme_hello:
+    resource: "@AcmeHelloBundle/Resources/config/routing.yml"
+    prefix:   /
+index:
+    pattern:   /home
+    defaults:  { _controller:RepairLoginBundle:home:home}
+login:
+    pattern:   /clilogin
+    defaults:  { _controller:RepairLoginBundle:Login:login}
+clientlogin:
+    pattern:   /clientlogin
+    defaults:  { _controller:RepairLoginBundle:clientlogin:login}
+afflogin:
+    pattern:   /affliatelogin
+    defaults:  { _controller:RepairLoginBundle:afflogin:afflogin}
+adminlogin:
+    pattern:   /adminlogin
+    defaults:  { _controller:RepairLoginBundle:admin:login}
+clientreg:
+    pattern:   /clientregistration
+    defaults:  { _controller:RepairregisterBundle:register:client}
+affliatereg:
+    pattern:   /affliateregistration
+    defaults:  { _controller:RepairregisterBundle:registeraffliate:affliate}
+logout:
+    pattern:   /logout
+    defaults:  { _controller:RepairLoginBundle:Login:logout}
+panel:
+    pattern:   /adminpanel
+    defaults:  { _controller:RepairLoginBundle:admin:show}
+clientsection:
+    pattern:   /clientsection
+    defaults:  { _controller:RepairLoginBundle:clientlogin:clientsection}
+affliatesection:
+    pattern:   /affliatesection
+    defaults:  { _controller:RepairLoginBundle:afflogin:affliatesection}
+
